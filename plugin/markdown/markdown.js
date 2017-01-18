@@ -243,6 +243,10 @@
 				};
 
 				xhr.open( 'GET', url, false );
+				
+				// fetch plain markdown content from server
+				var accept = section.getAttribute( 'data-accept' );
+				xhr.setRequestHeader("Accept",accept||"text/plain");
 
 				try {
 					xhr.send();
